@@ -1,14 +1,5 @@
 import './App.css'
-import React from 'react'
-import ReactDOM from 'react-dom'
-
-function Book(props) {
-    return React.createElement('div', {}, [
-      React.createElement('h2', {}, props.name),
-      React.createElement('p', {}, props.year),
-      React.createElement('p', {}, props.price)
-    ])
-  }
+import Book from './Book'
 
 function App() {
     return (
@@ -20,12 +11,5 @@ function App() {
         </div>
     )
 }
-const rootElement = document.getElementById('root')
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
 
-  rootElement
-)
 export default App
