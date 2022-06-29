@@ -6,15 +6,12 @@ class ReacTimer extends React.Component {
         this.state = {
             count: 0,
             isCounting: false,
+            timerId: null,
         }
     }
 
-    componentDidMount() {
-        this.timerId = setInterval(() => this.increment(), 1000)
-    }
-
     componentDidUpdate(prevState) {
-        if (this.state.isCounting !== prevState.isCounting) {
+        if (this.state.timerId !== prevState.timerId) {
             if(this.state.isCounting) {
                 this.startTimer()
             } else {
@@ -24,7 +21,7 @@ class ReacTimer extends React.Component {
     }
 
     componentWillUnmount() {
-        clearInterval(this.timerId)
+        clearInterval(this.state.timerId)
     }
 
     handleStart = () => {
@@ -40,24 +37,18 @@ class ReacTimer extends React.Component {
     }
 
     startTimer = () => {
-        if (this.timerId === null) {
-            this.timerId = setInterval(
+        if (this.state.timerId === null) {
+            this.state.timerId = setInterval(
             () => this.setState((prevState) => ({ count: prevState.count + 1 })),
             1000)
         }
     }
 
     stopTimer = () => {
-        if (this.timerId !== null) {
-            clearInterval(this.timerId)
-            this.timerId = null
+        if (this.state.timerId !== null) {
+            clearInterval(this.state.timerId)
+            this.state.timerId = null
         }
-    }
-
-    increment() {
-        this.setState((prevState) => ({
-        count: Number(prevState.count) + 1,
-        }))
     }
 
     render() {
