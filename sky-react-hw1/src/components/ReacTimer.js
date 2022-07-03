@@ -5,13 +5,12 @@ class ReacTimer extends React.Component {
         super(props)
         this.state = {
             count: 0,
-            isCounting: false,
             timerId: null,
         }
     }
 
     componentDidUpdate(prevState) {
-        if (this.state.timerId !== prevState.timerId) {
+        if (this.state.count !== prevState.count) {
             if(this.state.isCounting) {
                 this.startTimer()
             } else {
@@ -47,7 +46,7 @@ class ReacTimer extends React.Component {
     stopTimer = () => {
         if (this.state.timerId !== null) {
             clearInterval(this.state.timerId)
-            this.state.timerId = null
+            this.setState({ timerId: null })
         }
     }
 
@@ -56,7 +55,7 @@ class ReacTimer extends React.Component {
             <div>
                 <h1>React Timer</h1>
                 <h3 className='Color'>{this.state.count}</h3>
-                {!this.state.isCounting ? (
+                {!this.state.timerId ? (
                 <button className='Button' type="button" onClick={this.handleStart}>Start
                 </button>
                 ) : (
