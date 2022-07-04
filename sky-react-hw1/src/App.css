@@ -2,3 +2,23 @@
   margin: 20px;
   text-align: center;
 }
+
+.Button {
+  width: 100px;
+  height: 25px;
+  background: #FFFFFF;
+  border-radius: 4px;
+  border-color: #004980;
+  border-width: thin;
+  font-size: 15px;
+  color: #004980;
+  margin: 4px;
+}
+
+.Clock {
+  margin-top: 60px;
+}
+
+.Color {
+  color: #004980;
+}

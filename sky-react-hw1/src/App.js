@@ -1,9 +1,11 @@
 import './App.css'
-import MinMax from './components/MinMax'
+import Clock from './components/Clock'
+import ReacTimer from './components/ReacTimer'
 
 function App() {
     return <div className='App'>
-        <MinMax min={1} max={10} />
+        <ReacTimer />
+        <Clock />
         </div>
 }
 
