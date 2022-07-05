@@ -22,3 +22,31 @@
 .Color {
   color: #004980;
 }
+
+.Squares {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 50px;
+}
+
+.Blue {
+  width: 100px;
+  height: 100px;
+  background: dodgerblue;
+  border: inherit;
+}
+
+.Green {
+  width: 100px;
+  height: 100px;
+  background: green;
+  border: inherit;
+}
+
+.Red {
+  width: 100px;
+  height: 100px;
+  background: red;
+  border: inherit;
+}
