@@ -9,30 +9,20 @@ function MinMaxFn(props) {
 
     const onChangeInput = (event) => setCurCount(event.target.value.replace(/\D/,''))
 
-
     return (
         <div>
-            {curCount > props.min
-                ? <button type="button" onClick={dec}>
-                    {' '}-{' '}
-                </button>
-                : <button type="button">{' '}-{' '}
-                </button>
-                }
-                <input  
-                    type='text'
-                    name='input'
-                    value={curCount}
-                    onChange={onChangeInput}
-                />
-                {curCount < props.max
-                ? <button type="button" onClick={inc}>
-                    {' '}+{' '}
-                </button>
-                : <button type="button">{' '}+{' '}
-                </button>
-                }
-            </div>
+            <button type="button" 
+            onClick={curCount > props.min ? dec : undefined}>
+            {' '}-{' '}
+            </button>
+            <input type='text' name='input' value={curCount}
+            onChange={onChangeInput}
+            />
+            <button type="button" 
+            onClick={curCount < props.max ? inc : undefined}>
+            {' '}+{' '}
+            </button>
+        </div>
     )
 }
 export default MinMaxFn
