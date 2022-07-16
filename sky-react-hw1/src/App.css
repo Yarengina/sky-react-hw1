@@ -50,3 +50,20 @@
   background: red;
   border: inherit;
 }
+
+.Books {
+  text-align: initial;
+}
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  margin-bottom: 50px;
+}
+
+.Message {
+  margin-left: 10px;
+  color: red;
+}

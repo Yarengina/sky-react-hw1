@@ -1,13 +1,9 @@
 import './App.css'
-import MinMaxFn from './components/MinMaxFn'
-import ShowHide from './components/ShowHide'
-import TwoSquares from './components/TwoSquares'
+import BookCart from './components/BookCart/BookCart'
 
 function App() {
     return <div className='App'>
-        <ShowHide />
-        <TwoSquares />
-        <MinMaxFn min={1} max={10} />
+        <BookCart />
         </div>
 }
 
