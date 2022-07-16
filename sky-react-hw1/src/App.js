@@ -1,11 +1,13 @@
 import './App.css'
-import Clock from './components/Clock'
-import ReacTimer from './components/ReacTimer'
+import MinMaxFn from './components/MinMaxFn'
+import ShowHide from './components/ShowHide'
+import TwoSquares from './components/TwoSquares'
 
 function App() {
     return <div className='App'>
-        <ReacTimer />
-        <Clock />
+        <ShowHide />
+        <TwoSquares />
+        <MinMaxFn min={1} max={10} />
         </div>
 }
 

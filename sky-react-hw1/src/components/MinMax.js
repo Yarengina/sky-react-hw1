@@ -13,7 +13,7 @@ class MinMax extends React.Component {
     }
 
     inc = () => {
-        this.setState((prevState) => ({ curCount: prevState.curCount + 1 }))
+        this.setState((prevState) => ({ curCount: Number(prevState.curCount) + 1 }))
     }
 
     dec = () => {
