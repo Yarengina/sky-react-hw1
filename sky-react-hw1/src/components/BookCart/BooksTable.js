@@ -15,22 +15,22 @@ function BooksTable({
                 <th>Delete</th>
                 <th>Total</th>
             </tr>
-            {books.map((book, i) => (
-            <tr key={book.id}>
-                <td>{i + 1} </td>
-                <td>{book.title} </td>
-                <td>{book.price} </td>
+            {books.map(({id, title, price, rest, quantity}, index) => (
+            <tr key={id}>
+                <td>{index + 1} </td>
+                <td>{title} </td>
+                <td>{price} </td>
                 <td>
                     <MinMaxBook
-                        max={book.rest}
-                        current={book.quantity}
-                        onChange={(quantity) => setQuatinty(book.id, quantity)}
+                        max={rest}
+                        current={quantity}
+                        onChange={(bookQuantity) => setQuatinty(id, bookQuantity)}
                     />
                 </td>
                 <td>
-                    <button type='button' onClick={() => removeBook(book.id)}>x</button>
+                    <button type='button' onClick={() => removeBook(id)}>x</button>
                 </td>
-                <td>{book.price * book.quantity} руб.</td>
+                <td>{price * quantity} руб.</td>
             </tr>
             ))}
         </tbody>

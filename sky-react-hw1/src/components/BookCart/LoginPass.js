@@ -1,27 +1,27 @@
 import Input from './Input'
 
-function LoginPass() {
-    const formData = [
-        {
-        id: '1',
-        type: 'text',
-        name: 'login',
-        text: 'Login',
-        },
-        {
-        id: '2',
-        type: 'password',
-        name: 'password',
-        text: 'Password',
-        },
-    ]
+const formData = [
+    {
+    id: '1',
+    type: 'text',
+    name: 'login',
+    text: 'Login',
+    },
+    {
+    id: '2',
+    type: 'password',
+    name: 'password',
+    text: 'Password',
+    },
+]
 
-    const inputs = formData.map((input) => (
+function LoginPass() {
+    const inputs = formData.map(({ name, type, text, id }) => (
     <Input
-        name={input.name}
-        type={input.type}
-        text={input.text}
-        key={input.id}
+        name={name}
+        type={type}
+        text={text}
+        key={id}
     />
     ))
 

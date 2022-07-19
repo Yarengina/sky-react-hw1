@@ -1,7 +1,7 @@
-import InputRequired from './InputRequired'
+import useInputRequired from './useInputRequired'
 
 function Input({ type, name, text }) {
-    const inputCopy = InputRequired('')
+    const { inputValue, onChange, onBlur, isError } = useInputRequired('')
 
     return (
         <div>
@@ -10,11 +10,11 @@ function Input({ type, name, text }) {
             type={type}
             id={name}
             placeholder={text}
-            value={inputCopy.inputValue}
-            onChange={inputCopy.onValueChange}
-            onBlur={inputCopy.onBlurChange}
+            value={inputValue}
+            onChange={onChange}
+            onBlur={onBlur}
             />
-            {inputCopy.isError && (
+            {isError && (
             <span className='Message'>{`Type your ${text}`}</span>
             )}
         </div>
