@@ -1,17 +1,16 @@
 import { useState } from 'react'
 
-const useInputRequired = (initialValue, required) => {
+const useInputRequired = (initialValue, required = true) => {
     const [inputValue, setInputValue] = useState(initialValue)
-    const [isError, setIsError] = useState(required)
+    const [isError, setIsError] = useState(!required)
 
     const onBlur = () => {
-        setIsError(!inputValue)
+        setIsError(required && !inputValue)
     }
 
-    const onChange = (event) => {
-        const {target: {value}} = event
+    const onChange = ({target: {value}}) => {
         setInputValue(value)
-        setIsError(required)
+        setIsError(required && !value)
     }
 
     return {

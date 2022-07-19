@@ -1,7 +1,7 @@
 import useInputRequired from './useInputRequired'
 
-function Input({ type, name, text }) {
-    const { inputValue, onChange, onBlur, isError } = useInputRequired('')
+function Input({ type, name, text, required }) {
+    const { inputValue, onChange, onBlur, isError } = useInputRequired('', required)
 
     return (
         <div>
