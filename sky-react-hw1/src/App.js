@@ -1,9 +1,9 @@
 import './App.css'
-import BookCart from './components/BookCart/BookCart'
+import NumberGenerator from './components/NumberGenerator/NumberGenerator'
 
 function App() {
     return <div className='App'>
-        <BookCart />
+        <NumberGenerator />
         </div>
 }
 

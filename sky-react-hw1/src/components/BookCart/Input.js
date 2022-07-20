@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import useInputRequired from './useInputRequired'
 
 function Input({ type, name, text, required }) {
@@ -19,6 +20,13 @@ function Input({ type, name, text, required }) {
             )}
         </div>
     )
+}
+
+Input.propTypes = {
+    type: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+    required: PropTypes.bool.isRequired,
 }
 
 export default Input

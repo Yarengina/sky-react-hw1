@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import MinMaxBook from './MinMaxBook'
 
 function BooksTable({
@@ -35,6 +36,18 @@ function BooksTable({
             ))}
         </tbody>
     </table>
+}
+
+BooksTable.propTypes = {
+    books: PropTypes.shape({
+        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+        title: PropTypes.string,
+        price: PropTypes.number,
+        rest: PropTypes.number,
+        quantity: PropTypes.number,
+    }).isRequired,
+    removeBook: PropTypes.func.isRequired,
+    setQuatinty: PropTypes.func.isRequired,
 }
 
 export default BooksTable

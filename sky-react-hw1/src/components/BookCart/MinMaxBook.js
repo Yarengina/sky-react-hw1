@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 function MinMaxBook({ min = 1, max, current, onChange }) {
     function applyCurrent(num) {
         const validNum = Math.max(min, Math.min(max, num))
@@ -23,6 +25,13 @@ function MinMaxBook({ min = 1, max, current, onChange }) {
             </button>
         </div>
     )
+}
+
+MinMaxBook.propTypes = {
+    min: PropTypes.number.isRequired,
+    max: PropTypes.number.isRequired,
+    current: PropTypes.number.isRequired,
+    onChange: PropTypes.func.isRequired,
 }
   
 export default MinMaxBook
