@@ -1,17 +1,14 @@
 function getArrayOfNumbers(num) {
-    const arr = []
-    for (let i = 0; i <= num; i += 1) {
-      arr.push(i)
-    }
-    return arr
-  }
+    return Array.from({length: num + 1}, (item, index) => index)
+}
   
 const isEven = (num) => num % 2 === 0
 
-const isOdd = (num) => Math.abs(num % 2) === 1
+const isOdd = (num) => !isEven(num)
 
 const isPrime = (num) => {
-    if (Number.isNaN(num) || !Number.isFinite(num) || num % 1 || num < 2) {
+    // eslint-disable-next-line no-restricted-globals
+    if (isNaN(num) || !isFinite(num) || num % 1 || num < 2) {
         return false
     }
 
