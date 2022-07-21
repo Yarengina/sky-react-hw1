@@ -67,3 +67,26 @@
   margin-left: 10px;
   color: red;
 }
+
+.Main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.NumberField {
+  display: flex;
+  flex-wrap: wrap;
+  width: 500px;
+}
+
+.Number {
+  color: white;
+  font-size: 20px;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1px;
+}
