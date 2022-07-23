@@ -5,13 +5,13 @@ import booksStub from '../BookCart/booksStub'
 function Order() {
     const [books, setBooks] = useState(booksStub())
     const totalPrice = books.reduce(
-        (previousValue, currentBook) => 
-        previousValue + currentBook.price * (currentBook.quantity - 1), 0
+        (total, currentBook) => 
+        total + currentBook.price * (currentBook.quantity - 1), 0
     )
 
     const totalQuatinty = books.reduce(
-        (previousValue, currentBook) => 
-        previousValue + (currentBook.quantity - 1), 0
+        (total, {quantity}) => 
+        total + (quantity - 1), 0
     )
 
     const setQuatinty = (id, quantity) => {
