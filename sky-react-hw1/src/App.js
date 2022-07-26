@@ -1,9 +1,16 @@
 import './App.css'
-import Order from './components/Order/Order'
+import MinMaxLazy from './components/Forms/MinMaxLazy'
+import Select from './components/Forms/Select/Select'
+import LoginPassword from './components/Forms/LoginPassword/LoginPassword'
 
 function App() {
     return <div className='App'>
-        <Order />
+        <MinMaxLazy
+            min={0}
+            max={10}
+        />
+        <Select />
+        <LoginPassword />
         </div>
 }
 
